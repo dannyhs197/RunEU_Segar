@@ -1,18 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Net.NetworkInformation;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class GameController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public static int correctItemsCollected;
+    public static int wrongItemsCollected;
+    public static int totalItems;
+    public static int score;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
+    public GameObject[] collectableItems;
 }

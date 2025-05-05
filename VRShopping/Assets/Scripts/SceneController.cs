@@ -19,14 +19,7 @@ public class SceneController : MonoBehaviour
     /// </summary>
     public void Quit()
     {
-        if(EditorApplication.isPlaying)
-        {
-            EditorApplication.isPlaying = false;
-        }
-        else
-        {
-            Application.Quit();
-        }
+        Application.Quit();
     }
 
     /// <summary>
