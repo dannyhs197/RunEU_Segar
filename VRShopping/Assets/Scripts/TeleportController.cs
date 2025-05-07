@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Controls;
+using UnityEngine.UI;
 using UnityEngine.XR.Interaction.Toolkit.Locomotion.Teleportation;
 
 public class TeleportController : MonoBehaviour
@@ -17,26 +18,16 @@ public class TeleportController : MonoBehaviour
     [Tooltip("Input Action Reference for triggering teleport")]
     public InputActionReference teleportAction;
 
+    [Header("Fade UI")]
+    public Image fadeImage;
+
+    private float fadeDuration = 1.0f;
     private int currentAnchorIndex = 0;
+    private bool isTeleporting = false;
 
     private void Start()
     {
-        //Teleport to the first anchor on Start
-        if (teleportationAnchors.Length > 0 && teleportationProvider != null)
-        {
-            TeleportationAnchor anchor = teleportationAnchors[0];
-            if (anchor != null && anchor.teleportAnchorTransform != null)
-            {
-                TeleportRequest initialRequest = new TeleportRequest
-                {
-                    destinationPosition = anchor.teleportAnchorTransform.position,
-                    destinationRotation = anchor.teleportAnchorTransform.rotation,
-                    matchOrientation = MatchOrientation.TargetUpAndForward
-                };
-
-                teleportationProvider.QueueTeleportRequest(initialRequest);
-            }
-        }
+        TryTeleportToAnchor(0);
     }
 
     private void OnEnable()
@@ -57,17 +48,65 @@ public class TeleportController : MonoBehaviour
 
     private void OnTeleport(InputAction.CallbackContext context)
     {
+        if (isTeleporting) return;
+
         currentAnchorIndex++;
         try
         {
-            TryTeleportToAnchor(currentAnchorIndex);
+            if (currentAnchorIndex >= teleportationAnchors.Length)
+            {
+                throw new System.IndexOutOfRangeException();
+            }
+
+            StartCoroutine(SmoothTeleport(currentAnchorIndex));
         }
         catch
         {
             Debug.Log("Reached end of teleport anchors. Looping back to start.");
             currentAnchorIndex = 0;
-            TryTeleportToAnchor(currentAnchorIndex);
+            StartCoroutine(SmoothTeleport(currentAnchorIndex));
         }
+    }
+
+    private IEnumerator SmoothTeleport(int index)
+    {
+        isTeleporting = true;
+
+        yield return StartCoroutine(Fade(1f));
+
+        TryTeleportToAnchor(index);
+
+        yield return new WaitForSeconds(0.05f);
+
+        yield return StartCoroutine(Fade(0f));
+
+        isTeleporting = false;
+    }
+
+    private IEnumerator Fade(float targetAlpha)
+    {
+        if (fadeImage == null)
+        {
+            Debug.LogWarning("Fade image not assigned!");
+            yield break;
+        }
+
+        float startAlpha = fadeImage.color.a;
+        float time = 0f;
+
+        while (time < fadeDuration)
+        {
+            time += Time.deltaTime;
+            float alpha = Mathf.Lerp(startAlpha, targetAlpha, time / fadeDuration);
+            Color c = fadeImage.color;
+            c.a = alpha;
+            fadeImage.color = c;
+            yield return null;
+        }
+
+        Color final = fadeImage.color;
+        final.a = targetAlpha;
+        fadeImage.color = final;
     }
 
     private void TryTeleportToAnchor(int index)
