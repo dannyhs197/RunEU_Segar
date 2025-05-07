@@ -4,8 +4,15 @@ using UnityEngine;
 
 public class Basket : MonoBehaviour
 {
-    void OllisionEnter(Collision collision)
+    private string itemTag = "Item";
+    private int pointsPerItem = 10;
+
+    void OnTriggerEnter(Collider other)
     {
-        
+        if (other.CompareTag(itemTag))
+        {
+            other.gameObject.SetActive(false);
+            GameController.score += pointsPerItem;
+        }
     }
 }
