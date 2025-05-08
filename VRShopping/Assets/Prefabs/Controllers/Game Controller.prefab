@@ -44,3 +44,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 875b84dd0a597470190131c250a78fe5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scoreField: {fileID: 0}
+  collectableItems: []
