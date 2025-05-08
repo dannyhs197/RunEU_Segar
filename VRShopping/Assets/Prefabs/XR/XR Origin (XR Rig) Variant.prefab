@@ -192,7 +192,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38b95666217b24f518ee6cd6e097f827, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  listItems: []
+  listDisplay: {fileID: 784774080765679903}
 --- !u!1 &4445926562923619760
 GameObject:
   m_ObjectHideFlags: 0
@@ -702,7 +702,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 7005440527629123976}
         m_TargetAssemblyTypeName: ShoppingList, Assembly-CSharp
-        m_MethodName: hint
+        m_MethodName: ShowHints
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
