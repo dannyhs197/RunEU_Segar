@@ -1,14 +1,9 @@
 fileFormatVersion: 2
-guid: fea61671b80c46842a4d5cba3cef0f6a
+guid: 05a2927262ab0c1419594129bb91d62d
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Donut
-    second: {fileID: 2100000, guid: 49abf3768bdded14082a22db1a048e2e, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0

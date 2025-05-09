@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: fea61671b80c46842a4d5cba3cef0f6a
+guid: 2661d5ee3f4705f418946c31aa4686a1
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -7,8 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Donut
-    second: {fileID: 2100000, guid: 49abf3768bdded14082a22db1a048e2e, type: 2}
+      name: Trasnparent
+    second: {fileID: 2100000, guid: 16213e3abcf4a6441805b479041ed869, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
