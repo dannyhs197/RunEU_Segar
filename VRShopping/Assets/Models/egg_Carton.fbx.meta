@@ -9,6 +9,11 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: Box
     second: {fileID: 2100000, guid: 49a052b74f01d4a48922ef8180a2dcbf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: White
+    second: {fileID: 2100000, guid: 0c1b938c9ccda46f492a33491842b9b9, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

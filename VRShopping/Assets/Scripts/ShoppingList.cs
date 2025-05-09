@@ -36,7 +36,11 @@ public class ShoppingList : MonoBehaviour
             if (data != null)
             {
                 listDisplay.text += $"<b>{data.itemName}</b>\n";
-                listDisplay.text += $"{data.description}\n";
+
+                if (!data.isInBasket)
+                {
+                    listDisplay.text += $"{data.description}\n";
+                }
 
                 if (showHints)
                 {
@@ -49,5 +53,10 @@ public class ShoppingList : MonoBehaviour
                 listDisplay.text += "\n";
             }
         }
+    }
+
+    public void RefreshList()
+    {
+        DisplayItems(showHints: hintsShown);
     }
 }

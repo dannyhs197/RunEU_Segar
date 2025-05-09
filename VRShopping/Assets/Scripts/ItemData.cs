@@ -9,4 +9,5 @@ public class ItemData : MonoBehaviour
     [TextArea]
     public string description;
     public string[] hints = new string[2];
+    public bool isInBasket = false; 
 }

@@ -14,6 +14,16 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: Material_0.001
     second: {fileID: 2100000, guid: fa0f6ddea5776eb48a8e64f82298e337, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: case
+    second: {fileID: 2100000, guid: 616c34136547343b58dc57fb5c11e522, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: transparentFace
+    second: {fileID: 2100000, guid: 9a243f1a8c3424cefa0ab3196687159c, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Basket : MonoBehaviour
 {
+    public ShoppingList shoppingList;
     private string itemTag = "Item";
     private int pointsPerItem = 10;
 
@@ -13,6 +14,9 @@ public class Basket : MonoBehaviour
         {
             other.gameObject.SetActive(false);
             GameController.score += pointsPerItem;
+
+            other.GetComponent<ItemData>().isInBasket = true;
+            shoppingList.RefreshList();
         }
     }
 }

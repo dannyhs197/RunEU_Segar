@@ -3,7 +3,52 @@ guid: d8b5058fc3a9e254dbf6ad7d06cbd76b
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CapBase
+    second: {fileID: 2100000, guid: 4c64f0deecabc4ea5b7a8cfbd5613fef, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CapTop
+    second: {fileID: 2100000, guid: 45495b36444fd4fa68d16fd91a1ccf2b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cardboard
+    second: {fileID: 2100000, guid: 39890fc9b909640c4b9798a4359508f4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material #57
+    second: {fileID: 2100000, guid: 5237515822a814e4384cf02cea3edeac, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material #58
+    second: {fileID: 2100000, guid: 01739ea2eb91d41f19d4ac68332442ff, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.004
+    second: {fileID: 2100000, guid: 69cc82b29ed8f4daf89d0e2df576ed7c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PaperFront
+    second: {fileID: 2100000, guid: bc5e94f41397e4bc4ad58e45d6bb6cd2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PaperSides
+    second: {fileID: 2100000, guid: 1761b7334c25e4fcb90f400b8dfb5f87, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PaperTop
+    second: {fileID: 2100000, guid: 0f8f6f8a350ec4258930822db83abf79, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
