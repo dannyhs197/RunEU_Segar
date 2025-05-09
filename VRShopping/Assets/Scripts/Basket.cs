@@ -12,11 +12,23 @@ public class Basket : MonoBehaviour
     {
         if (other.CompareTag(itemTag))
         {
-            other.gameObject.SetActive(false);
-            GameController.score += pointsPerItem;
+            ItemData data = other.GetComponent<ItemData>();
 
-            other.GetComponent<ItemData>().isInBasket = true;
-            shoppingList.RefreshList();
+            if (data != null && !data.isInBasket)
+            {
+                data.isInBasket = true;
+                other.gameObject.SetActive(false);
+                GameController.score += pointsPerItem;
+
+                if (shoppingList.IsCurrentItem(other.gameObject))
+                {
+                    shoppingList.MoveToNextItem();
+                }
+                else
+                {
+                    shoppingList.RefreshList();
+                }
+            }
         }
     }
 }

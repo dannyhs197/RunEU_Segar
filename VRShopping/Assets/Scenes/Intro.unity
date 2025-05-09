@@ -364,6 +364,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: XR Origin (XR Rig) Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 6289624045073858734, guid: 12a5f1a7c68404025929614c9164b2fe, type: 3}
+      propertyPath: m_MotionControllerModeEnded.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6289624045073858734, guid: 12a5f1a7c68404025929614c9164b2fe, type: 3}
+      propertyPath: m_MotionControllerModeEnded.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8956613309488308514, guid: 12a5f1a7c68404025929614c9164b2fe, type: 3}
       propertyPath: m_SizeDelta.x
       value: 0
@@ -2088,7 +2096,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: -6.326389e-31}
+  m_BoundingSphereOverride: {x: 4e-45, y: 1e-45, z: 0, w: 10.755867}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
